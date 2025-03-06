@@ -1,0 +1,30 @@
+{
+  "name": "soundtube",
+  "version": "1.0.0",
+  "description": "YouTube IPA Subtitles - Learn English pronunciation while watching videos",
+  "main": "src/content.ts",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "dev": "pnpm run watch"
+  },
+  "dependencies": {
+    "wink-eng-lite-web-model": "^1.5.2",
+    "wink-nlp": "^1.14.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.11",
+    "typescript": "^5.3.3",
+    "@types/chrome": "^0.0.254"
+  },
+  "keywords": [
+    "youtube",
+    "ipa",
+    "pronunciation",
+    "learning",
+    "english",
+    "chrome-extension"
+  ],
+  "author": "",
+  "license": "MIT"
+}

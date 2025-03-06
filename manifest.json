@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "SoundTube - IPA Subtitles",
+  "version": "1.0.0",
+  "description": "Transform YouTube subtitles into IPA (International Phonetic Alphabet) for better English pronunciation learning",
+  "permissions": ["storage"],
+  "host_permissions": ["https://*.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "js": ["dist/content.js"],
+      "css": ["styles/content.css"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["dist/*.js", "dist/*.wasm"],
+      "matches": ["https://*.youtube.com/*"]
+    }
+  ]
+}
