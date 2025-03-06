@@ -20,7 +20,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["dist/*.js", "dist/*.wasm"],
+      "resources": ["dist/*.js", "dist/*.wasm", "icons/button.svg"],
       "matches": ["https://*.youtube.com/*"]
     }
   ]

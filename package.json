@@ -6,7 +6,17 @@
   "scripts": {
     "build": "node build.js",
     "watch": "node build.js --watch",
-    "dev": "pnpm run watch"
+    "dev": "pnpm run watch",
+    "clean": "rm -rf dist/ extension.zip",
+    "zip": "zip -r extension.zip dist/content.js icons/ styles/ manifest.json privacy-policy.md LICENSE README.md",
+    "publish": "pnpm run clean && pnpm run build && pnpm run zip",
+    "generate-store-assets": "node scripts/generate-store-assets.js",
+    "version:patch": "npm version patch && node scripts/update-manifest-version.js",
+    "version:minor": "npm version minor && node scripts/update-manifest-version.js",
+    "version:major": "npm version major && node scripts/update-manifest-version.js",
+    "release:private": "pnpm run version:patch && pnpm run publish",
+    "release:beta": "pnpm run version:minor && pnpm run publish",
+    "release:public": "pnpm run version:major && pnpm run publish"
   },
   "dependencies": {
     "wink-eng-lite-web-model": "^1.5.2",
@@ -15,7 +25,9 @@
   "devDependencies": {
     "esbuild": "^0.19.11",
     "typescript": "^5.3.3",
-    "@types/chrome": "^0.0.254"
+    "@types/chrome": "^0.0.254",
+    "canvas": "^2.11.2",
+    "fs-extra": "^11.2.0"
   },
   "keywords": [
     "youtube",
@@ -25,6 +37,15 @@
     "english",
     "chrome-extension"
   ],
-  "author": "",
-  "license": "MIT"
+  "author": "Your Name",
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/soundtube",
+  "bugs": {
+    "url": "https://github.com/yourusername/soundtube/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/soundtube.git"
+  },
+  "privacyPolicy": "https://github.com/flagrare/soundtube/blob/main/privacy-policy.md"
 }
